@@ -1,0 +1,7 @@
+product_id,product_name,current_stock,unit_cost,lead_time_days
+1001,Mechanical Keyboard,50,85.00,7
+1002,Ergonomic Mouse,12,45.00,5
+1003,USB-C Hub,110,25.00,3
+1004,HD Webcam,5,70.00,14
+1005,Large Desk Mat,40,15.00,4
+1006,Dual Monitor Arm,8,120.00,10
