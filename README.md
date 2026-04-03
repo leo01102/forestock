@@ -1,29 +1,29 @@
 # ForeStock: Predictive Warehouse Analytics
 
-#### Video Demo: https://www.youtube.com/watch?v=Y2Gl9fdZNb8
-#### Submit: https://submit.cs50.io/users/leo01102/cs50/problems/2022/python/project
-#### Certificate: https://cs50.harvard.edu/certificates/b48f3473-096e-4a47-99ec-6242c34cfca1 ([PDF](https://certificates.cs50.io/b48f3473-096e-4a47-99ec-6242c34cfca1.pdf?size=A4), [PNG](https://certificates.cs50.io/b48f3473-096e-4a47-99ec-6242c34cfca1.png?size=A4))
+**[Video Demo](https://www.youtube.com/watch?v=Y2Gl9fdZNb8)** • **[Final Project Certificate](https://cs50.harvard.edu/certificates/b48f3473-096e-4a47-99ec-6242c34cfca1)** ([PDF](https://certificates.cs50.io/b48f3473-096e-4a47-99ec-6242c34cfca1.pdf?size=A4) / [PNG](https://certificates.cs50.io/b48f3473-096e-4a47-99ec-6242c34cfca1.png?size=A4)) • **[Harvard CS50P Completion](https://submit.cs50.io/users/leo01102/cs50/problems/2022/python/project)**
+
+![Forestock Preview](assets/forestock_preview.png)
 
 #### Description:
 
-ForeStock is a Command Line Interface (CLI) tool designed to solve **inventory distortion**, a common problem where businesses lose revenue due to stockouts or tie up capital in dead stock.
+ForeStock is a Command Line Interface (CLI) tool built for **Harvard University's CS50P** to solve **inventory distortion**, a common problem where businesses lose revenue due to stockouts or tie up capital in dead stock.
 
-By leveraging historical sales data and supplier constraints, ForeStock converts a static inventory list into a prioritized report. It provides warehouse managers with a color-coded overview that automatically categorizes products as **URGENT** (immediate action needed), **WARNING** (order soon), or **OK** (safe levels).
+By leveraging historical sales data and supplier constraints, ForeStock converts a static inventory list into a **prioritized report**. It provides **warehouse managers** with a color-coded overview that automatically categorizes products as **URGENT** (immediate action needed), **WARNING** (order soon), or **OK** (safe levels).
 
 ### Forecasting Logic
 
 The project implements five formulas to derive insights:
 
 1. **Sales Velocity ($V$):** Calculates average units sold per day.
-   $$V = \frac{\sum quantity\_sold}{days\_in\_history}$$
+   > $$V = \frac{\sum \text{quantity sold}}{\text{days in history}}$$
 2. **Days of Cover ($DC$):** How many days the current stock is expected to last.
-   $$DC = \frac{current\_stock}{V}$$
+   > $$DC = \frac{\text{current stock}}{V}$$
 3. **Reorder Point ($ROP$):** The stock level that triggers a reorder so new items arrive before you run out.
-   $$ROP = (V \times lead\_time) + safety\_stock$$
-4. **Target Reorder Quantity ($TRQ$):** How many units to buy to reach a desired stock level for the specific future period.
-   $$TRQ = (V \times period\_supply) + safety\_stock - current\_stock$$
+   > $$ROP = (V \times \text{lead time}) + \text{safety stock}$$
+4. **Target Reorder Quantity ($TRQ$):** How many units to buy to reach a desired stock level for a future period.
+   > $$TRQ = (V \times \text{period supply}) + \text{safety stock} - \text{current stock}$$
 5. **Capital Requirement ($CR$):** The total amount of money needed to buy the suggested items.
-   $$CR = \sum (TRQ \times unit\_cost)$$
+   > $$CR = \sum (TRQ \times \text{unit cost})$$
 
 ### Project Structure
 
